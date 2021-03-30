@@ -1,0 +1,18 @@
+﻿			DEVOPS ASSIGNMENT  3
+
+[0]  Docker compose is a tool for running multiple conatiners. It uses an YAML file for configuration. We can create and start services with a single docker command.
+
+[1]  Dockerfile is a document in from which we can build our base image. It can be used for a single image while docker compose is a tool with which we can club multiple containers together.
+We have to specify the version number of the dockercompose. There is a structure followed to write into both the files. Dockerfile allows us to run one container while docker-compose allows us to assemble multiple containers.
+
+[2]  version -  Denotes the version of docker compose we are using. Here, I used version 2.
+services -  This defines all the containers we want to create. Here, mysql1,mysql2 and mysql3 are the three different nodes or containers. Since we want to build a three node cluster, we are using 3 services.
+Mysql1 is our node 1. Mysql2 node 2 and mysql3 node 3.
+build- It specifies the location of our Dockerfile and the ‘.’ represents the current directory where docker-compose.yml is located.
+Ports - This is used to map our container’s port to the host port. Here, container’s port is 5000 and host port is 3306.
+The similar is carried out for next two containers. Only change is we are mapping different port numbers for different containers to our single host port.
+Indentation plays a key role in docker compose
+
+[3]  
+
+[4]  If we did not use clustering for our example given here, we would have had to create 3 dockerfiles, 3 containers and run each of them separately as mentioned in the lecture. With clustering, it is very easy to club different images and configure them in a single go. If we have a dockerfile it makes us easier orelse we can just specify the image names and details and docker compose creates it for us.
